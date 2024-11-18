@@ -1,6 +1,7 @@
 package com.veras.devsuperior.dslist.dto;
 
 import com.veras.devsuperior.dslist.entities.Game;
+import com.veras.devsuperior.dslist.projections.GameMinProjection;
 import jakarta.persistence.Column;
 
 public class GameMinDTO {
@@ -18,6 +19,15 @@ public class GameMinDTO {
         imgUrl = entitty.getImgUrl();
         shortDescription = entitty.getShortDescription();
     }
+    //Criando um construtor para o GameMinProjection
+    public GameMinDTO(GameMinProjection projection){
+        id = projection.getId();
+        title = projection.getTitle();
+        year = projection.getYear();
+        imgUrl = projection.getImgUrl();
+        shortDescription = projection.getShortDescription();
+    }
+
 
     public Long getId() {
         return id;
